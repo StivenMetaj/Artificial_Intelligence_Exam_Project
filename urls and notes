@@ -1,0 +1,36 @@
+carClassifier URL: http://mldata.org/repository/data/viewslug/uci-20070111-car/
+
+carClassifier NOTES: BUYING (vhigh, high, med, low)
+                     MAINT (vhigh, high, med, low)
+                     DOORS (2, 3, 4, 5more)
+                     PERSONS (2, 4, more)
+                     LUG_BOOT (small, med, big)
+                     SAFETY (low, med, high)
+                     CLASS (unacc, acc, good, vgood)
+
+biometryCasesClassifier URL: http://mldata.org/repository/data/viewslug/statlib-20050214-csb_ch19e/
+
+biometryCasesClassifier NOTES: AGE : Age on January 1, 1982
+                               GENDER : 0=Male, 1=Female
+                               EDUCATION : 0=no college, 1=some college
+                               SMOKER : 1=never, 2=former, 3=current
+                               CIGARETTES/DAY : values rounded UP to the nearest 5
+                               YEARS_SMOKED : Number of years smoked as of January 1, 1982
+                               YEARS_QUIT : Number of years since smoking cessation, as of January 1, 1982 (zero indicates less than one year)
+                               FOLLOWUP_TIME : Years from January 1, 1982 until death or last interview
+                               DEATH_CODES : 0=alive, 1=death from other causes, 2=lung cancer death
+
+pokerHandClassifier URL: http://mldata.org/repository/data/viewslug/poker/
+
+pokerHandClassifier NOTES: S1 "Suit of card #1" (1-4) representing {Hearts, Spades, Diamonds, Clubs}
+                           C1 "Rank of card #1" (1-13) representing (Ace, 2, 3, ... , Queen, King)
+                           S1 "Suit of card #1" (1-4) representing {Hearts, Spades, Diamonds, Clubs}
+                           C1 "Rank of card #1" (1-13) representing (Ace, 2, 3, ... , Queen, King)
+                           S1 "Suit of card #1" (1-4) representing {Hearts, Spades, Diamonds, Clubs}
+                           C1 "Rank of card #1" (1-13) representing (Ace, 2, 3, ... , Queen, King)
+                           S1 "Suit of card #1" (1-4) representing {Hearts, Spades, Diamonds, Clubs}
+                           C1 "Rank of card #1" (1-13) representing (Ace, 2, 3, ... , Queen, King)
+                           S1 "Suit of card #1" (1-4) representing {Hearts, Spades, Diamonds, Clubs}
+                           C1 "Rank of card #1" (1-13) representing (Ace, 2, 3, ... , Queen, King)
+                           CLASS "Rank of hand" (0-9) representing (Nothin, Pair, Double Pair, Tris, Straight, Flush,
+                                                                    Full House, Poker, Straight Flush, Royal Flush)

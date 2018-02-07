@@ -3,7 +3,9 @@ A python application that permits to show differences between different impurity
 
 # How to use
 The application runs in "main.py" and when it starts "mainFunction()" is called. "mainFunction" in turn calls "fiveFoldCrossValidationTest" on "dataSets" and "targetPositions" elements.
+
 So, to use the app with your datasets, you must insert in "dataSets" your CSV files and in "targetPositions" the positions of your target attributes.
+
 In particular the first row of your datasets must be the attributes list and indexs in "targetPositions" are human-friendly (if you have n attributes, the index must be a number from 1 to n).
 
 # References

@@ -4,7 +4,9 @@ import time
 def kFoldCrossValidation(data, attributes, targetAttribute, impurity, k):
     # La funzione esegue per k volte una cross validation con trainset e testset sempre diversi
     numberExamples = len(data)
-    totalScore = 0.0
+    totalScoreAverage = 0.0
+    scores = []
+
     print str(k) + "-Fold Cross Validation (with impurity type = " + str(impurity) + ") is starting ..."
 
     for i in range(0, k):
@@ -35,10 +37,11 @@ def kFoldCrossValidation(data, attributes, targetAttribute, impurity, k):
                 tmpScore = tmpScore + 1.0
 
         tmpScore = tmpScore / len(testSet)
-        totalScore = totalScore + tmpScore
+        totalScoreAverage = totalScoreAverage + tmpScore
+        scores.append(tmpScore)
 
     print
-    return totalScore/k
+    return scores, totalScoreAverage/k
 
 def getTargetValue(tree, line):
     # La funzione controlla se il tipo dell'albero e' una stringa. Se cosi' non e' vuol dire che non siamo arrivati

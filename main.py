@@ -1,31 +1,39 @@
 from crossValidation import kFoldCrossValidation
 from dataManipulation import *
 
-# print createDecisionTree(data, attributes, targetAttribute, 0)
-# print createDecisionTree(data, attributes, targetAttribute, 1)
-# print createDecisionTree(data, attributes, targetAttribute, 2)
+# nursery 9, letter 2, car 7, poker 11
 
-dataSets = ["carClassifier.csv"]
-targetPositions = [2]
+dataSets = ["pokerHandClassifier.csv"]
+targetPositions = [11]
 
 def fiveFoldCrossValidationTest(CSVDataSet, targetPosition):
     data, attributes, targetAttribute = getInfoFromCSV(CSVDataSet, targetPosition)
 
-    tmp = []
-    tmp.append(kFoldCrossValidation(data, attributes, targetAttribute, 0, 5))
-    tmp.append(kFoldCrossValidation(data, attributes, targetAttribute, 1, 5))
-    tmp.append(kFoldCrossValidation(data, attributes, targetAttribute, 2, 5))
+    scores = []
+    averageScores = []
 
-    return tmp
+    misclassification = kFoldCrossValidation(data, attributes, targetAttribute, 0, 5)
+    gini = kFoldCrossValidation(data, attributes, targetAttribute, 1, 5)
+    entropy = kFoldCrossValidation(data, attributes, targetAttribute, 2, 5)
+
+    scores.append(misclassification[0])
+    scores.append(gini[0])
+    scores.append(entropy[0])
+
+    averageScores.append(misclassification[1])
+    averageScores.append(gini[1])
+    averageScores.append(entropy[1])
+
+    return scores, averageScores
 
 def mainFunction():
     for i in range(0, len(dataSets)):
         print "DATABASE NUMBER " + str(i + 1) + " : " + dataSets[i]
-        scores = fiveFoldCrossValidationTest(dataSets[i], targetPositions[i])
+        test = fiveFoldCrossValidationTest(dataSets[i], targetPositions[i])
         print
-        print "Score with MISCLASSIFICATION : " + str(scores[0])
-        print "Score with GINI : " + str(scores[1])
-        print "Score with ENTROPY : " + str(scores[2])
+        print "Scores with MISCLASSIFICATION : " + str(test[0][0]) + "  |  Average : " + str(test[1][0])
+        print "Scores with GINI : " + str(test[0][1]) + "  |  Average : " + str(test[1][1])
+        print "Scores with ENTROPY : " + str(test[0][2]) + "  |  Average : " + str(test[1][2])
         print
         print
 

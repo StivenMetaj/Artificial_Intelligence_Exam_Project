@@ -1,6 +1,7 @@
 import h5py
 import os.path
 import sys
+from random import shuffle
 
 def getInfoFromCSV(filename, targetPosition):
     # La funzione ritorna un dataset, una lista di attributo e l'attributo target con in input
@@ -16,6 +17,10 @@ def getInfoFromCSV(filename, targetPosition):
     data = []
     for line in lines:
         data.append(dict(zip(attributes, [element.strip() for element in line.split(",")])))
+
+    # Lo score del k-fold cross validation dipende molto (da come e' stata scritta la funzione che se ne occupa)
+    # dall'ordine delle righe nel dataSet. Grazie ad uno shuffle sui dati non si ha piu' questa forte dipendenza
+    shuffle(data)
 
     file.close()
     return (data, attributes, targetAttribute)
@@ -34,6 +39,12 @@ def setDiscreteDataValuesForAdoptedChildren(data):
 def getCSVFromHDF5(filenameHDF5, filenameCSV):
     # La funzione permette di estrapolare le informazioni di un file HDF5 (file molto usati nell'analisi di Big Data)
     # e di salvarle in formato csv da cui poi si potra' creare un dataSet
+
+    # Purtroppo ogni dataSet viene salvato in modo diverso a seconda di chi e' che crea il file HDF5,
+    # questa funzione pertanto funziona solo su uno specifico dataSet (carClassifier).
+
+    # Per poter estrarre le informazioni da diversi dataSet e' necessario usare un approccio diverso a seconda
+    # della struttura dei GRUPPI
     w = open(filenameCSV, "w")
 
     if os.path.isfile(filenameCSV):

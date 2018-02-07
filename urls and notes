@@ -8,17 +8,45 @@ carClassifier NOTES: BUYING (vhigh, high, med, low)
                      SAFETY (low, med, high)
                      CLASS (unacc, acc, good, vgood)
 
-biometryCasesClassifier URL: http://mldata.org/repository/data/viewslug/statlib-20050214-csb_ch19e/
+                     # Instances: 1728 / # Attributes: 7
+----------------------------------------------------------------------------------------------------------------------
 
-biometryCasesClassifier NOTES: AGE : Age on January 1, 1982
-                               GENDER : 0=Male, 1=Female
-                               EDUCATION : 0=no college, 1=some college
-                               SMOKER : 1=never, 2=former, 3=current
-                               CIGARETTES/DAY : values rounded UP to the nearest 5
-                               YEARS_SMOKED : Number of years smoked as of January 1, 1982
-                               YEARS_QUIT : Number of years since smoking cessation, as of January 1, 1982 (zero indicates less than one year)
-                               FOLLOWUP_TIME : Years from January 1, 1982 until death or last interview
-                               DEATH_CODES : 0=alive, 1=death from other causes, 2=lung cancer death
+letterClassifier URL: http://mldata.org/repository/data/viewslug/datasets-uci-letter/
+
+letterClassifier NOTES: LETTR : capital letter
+                        X-BOX : horizontal position of box
+                        Y-BOX : vertical position of box
+                        WIDTH : width of box
+                        HIGH  : height of box
+                        ONPIX : total # on pixels
+                        X-BAR : mean x of on pixels in box
+                        Y-BAR : mean y of on pixels in box
+                        X2BAR : mean x variance
+                        Y2BAR : mean y variance
+                        XYBAR : mean x y correlation
+                        X2YBR : mean of x * x * y
+                        XY2BR : mean of x * y * y
+                        X-EGE : mean edge count left to right
+                        XEGVY : correlation of x-ege with y
+                        Y-EGE : mean edge count bottom to top
+                        YEGVX : correlation of y-ege with x
+
+                        # Instances: 20000 / # Attributes: 17
+----------------------------------------------------------------------------------------------------------------------
+
+nurseryClassifier URL: http://mldata.org/repository/data/viewslug/uci-20070111-nursery/
+
+nurseryClassifier NOTES: PARENTS (usual, pretentious, great_pret)
+                         HAS_NURS (proper, less_proper, improper, critical, very_crit)
+                         FORM (complete, completed, incomplete, foster)
+                         CHILDREN (1, 2, 3, more)
+                         HOUSING (convenient, less_conv, critical)
+                         FINANCE (convenient, inconv)
+                         SOCIAL (non-prob, slightly_prob, problematic)
+                         HEALTH (recommended, priority, not_recom)
+
+                         # Instances: 12960 / # Attributes: 9
+----------------------------------------------------------------------------------------------------------------------
 
 pokerHandClassifier URL: http://mldata.org/repository/data/viewslug/poker/
 
@@ -34,3 +62,5 @@ pokerHandClassifier NOTES: S1 "Suit of card #1" (1-4) representing {Hearts, Spad
                            C1 "Rank of card #1" (1-13) representing (Ace, 2, 3, ... , Queen, King)
                            CLASS "Rank of hand" (0-9) representing (Nothin, Pair, Double Pair, Tris, Straight, Flush,
                                                                     Full House, Poker, Straight Flush, Royal Flush)
+
+                           # Instances: 1025010 / # Attributes: 11

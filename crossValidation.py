@@ -10,7 +10,7 @@ def kFoldCrossValidation(data, attributes, targetAttribute, impurity, k):
     print str(k) + "-Fold Cross Validation (with impurity type = " + str(impurity) + ") is starting ..."
 
     for i in range(0, k):
-        sys.stdout.write("\r{0}".format("Test number " + str(i + 1) + " of " + str(k)))
+        sys.stdout.write("\r{0}".format("Test number " + str(i + 1) + " of " + str(k) + " ..."))
         sys.stdout.flush()
         time.sleep(0.15)
 
@@ -39,6 +39,8 @@ def kFoldCrossValidation(data, attributes, targetAttribute, impurity, k):
         tmpScore = tmpScore / len(testSet)
         totalScoreAverage = totalScoreAverage + tmpScore
         scores.append(tmpScore)
+        sys.stdout.write("\r{0}".format("Test number " + str(i + 1) + " of " + str(k) + " finished!"))
+        sys.stdout.flush()
 
     print
     return scores, totalScoreAverage/k

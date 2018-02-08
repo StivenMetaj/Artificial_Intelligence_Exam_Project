@@ -46,21 +46,3 @@ nurseryClassifier NOTES: PARENTS (usual, pretentious, great_pret)
                          HEALTH (recommended, priority, not_recom)
 
                          # Instances: 12960 / # Attributes: 9
-----------------------------------------------------------------------------------------------------------------------
-
-pokerHandClassifier URL: http://mldata.org/repository/data/viewslug/poker/
-
-pokerHandClassifier NOTES: S1 "Suit of card #1" (1-4) representing {Hearts, Spades, Diamonds, Clubs}
-                           C1 "Rank of card #1" (1-13) representing (Ace, 2, 3, ... , Queen, King)
-                           S1 "Suit of card #1" (1-4) representing {Hearts, Spades, Diamonds, Clubs}
-                           C1 "Rank of card #1" (1-13) representing (Ace, 2, 3, ... , Queen, King)
-                           S1 "Suit of card #1" (1-4) representing {Hearts, Spades, Diamonds, Clubs}
-                           C1 "Rank of card #1" (1-13) representing (Ace, 2, 3, ... , Queen, King)
-                           S1 "Suit of card #1" (1-4) representing {Hearts, Spades, Diamonds, Clubs}
-                           C1 "Rank of card #1" (1-13) representing (Ace, 2, 3, ... , Queen, King)
-                           S1 "Suit of card #1" (1-4) representing {Hearts, Spades, Diamonds, Clubs}
-                           C1 "Rank of card #1" (1-13) representing (Ace, 2, 3, ... , Queen, King)
-                           CLASS "Rank of hand" (0-9) representing (Nothin, Pair, Double Pair, Tris, Straight, Flush,
-                                                                    Full House, Poker, Straight Flush, Royal Flush)
-
-                           # Instances: 1025010 / # Attributes: 11

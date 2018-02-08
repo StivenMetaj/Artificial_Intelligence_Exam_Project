@@ -12,5 +12,4 @@ In particular 2 observations:
 
 # References
 Thanks to [Christopher Roach](http://www.oreilly.com/pub/au/1904 "Christopher Roach oreilly page") and his [article](http://archive.oreilly.com/pub/a/python/2006/02/09/ai_decision_trees.html) for helping me to understand better decision trees and data structures behind them.
-
 Thanks also to [Stack Overflow](https://stackoverflow.com/) for having always a solution for any problem.

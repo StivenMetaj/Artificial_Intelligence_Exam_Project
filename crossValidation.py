@@ -1,5 +1,9 @@
 from decisionTree import *
 import time
+from decimal import *
+
+ctx = localcontext()
+ctx.rounding = ROUND_DOWN
 
 def kFoldCrossValidation(data, attributes, targetAttribute, impurity, k):
     # La funzione esegue per k volte una cross validation con trainset e testset sempre diversi
@@ -38,12 +42,12 @@ def kFoldCrossValidation(data, attributes, targetAttribute, impurity, k):
 
         tmpScore = tmpScore / len(testSet)
         totalScoreAverage = totalScoreAverage + tmpScore
-        scores.append(tmpScore)
+        scores.append(float(Decimal(tmpScore).quantize(Decimal('0.00001'))))
         sys.stdout.write("\r{0}".format("Test number " + str(i + 1) + " of " + str(k) + " finished!"))
         sys.stdout.flush()
 
     print
-    return scores, totalScoreAverage/k
+    return scores, Decimal(totalScoreAverage/k).quantize(Decimal('0.00001'))
 
 def getTargetValue(tree, line):
     # La funzione controlla se il tipo dell'albero e' una stringa. Se cosi' non e' vuol dire che non siamo arrivati
